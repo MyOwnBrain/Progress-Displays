@@ -1,0 +1,114 @@
+:root {
+    font-size: 16px;
+
+    --background: #04060c;
+    --color1: #e7a358;
+    --color2: #ae6138;
+}
+
+@font-face {
+    font-family: montserrat;
+    src: url(fonts/Montserrat-ExtraBold.ttf);
+    font-weight: bolder;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    user-select: none;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    background: var(--background);
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+}
+
+.progs {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.progress {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #ffffff20, #ffffff05);
+    box-shadow: 0 0.5rem 1rem #000003;
+    border-radius: 2rem;
+    transition: all 0.5s ease-in-out;
+}
+
+.progress:hover {
+    scale: 1.05;
+    transform: translateY(-0.5rem);
+    box-shadow: 0 1rem 1rem #000003;
+}
+
+.percent_text {
+    position: absolute;
+    font-family: montserrat;
+    font-weight: bolder;
+    font-size: 2rem;
+    background: linear-gradient(135deg, var(--color1), var(--color2));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0 0 0.5rem #000003);
+}
+
+/* progress circle */
+
+svg {
+    width: 16rem;
+    height: 16rem;
+    backdrop-filter: blur(1);
+}
+
+svg .progress_circle {
+    transform: rotate(-90deg);
+    transform-origin: center;
+    stroke-dasharray: 999;
+    stroke-dashoffset: 999;
+    transition: 1s ease-in-out;
+    filter: drop-shadow(0 0 0.5rem #000003);
+}
+
+/* progress bar */
+
+.progress_bar {
+    width: 32rem;
+    height: 16rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.progress_bar .percent_text {
+    position: static;
+    font-size: 3rem;
+}
+
+.bar {
+    width: 24rem;
+    height: 1.25rem;
+    border-radius: 1rem;
+    background: var(--background);
+    overflow: hidden;
+}
+
+.bar_label {
+    width: 100%;
+    height: 100%;
+    border-radius: 1rem;
+    background: linear-gradient(135deg, var(--color1), var(--color2));
+    transform: translateX(-100%);
+    transition: 1s ease-in-out;
+    pointer-events: none;
+}

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css">
+        <script src="script.js" defer></script>
+        <title>Progress</title>
+    </head>
+    <body>
+        <div class="progs">
+            <div class="progress progress_circle">
+                <svg>
+                    <defs>
+                        <linearGradient id="lin_gradient" x1="1" y1="0" x2="0" y2="1">
+                            <stop offset="0%" stop-color="#e7a358" />
+                            <stop offset="100%" stop-color="#ae6138" />
+                        </linearGradient>
+                    </defs>
+                    <circle class="progress_track" cx="50%" cy="50%" r="6rem" fill="none" stroke="#04060c" stroke-width="20"/>
+                    <circle class="progress_circle" id="progress_circle" cx="50%" cy="50%" r="6rem" fill="none" stroke="url(#lin_gradient)" stroke-width="1.25rem" stroke-linecap="round"/>
+                </svg>
+                <span class="percent_text">0%</span>
+            </div>
+            <div class="progress progress_bar">
+                <span class="percent_text">0%</span>
+                <div class="bar">
+                    <div class="bar_label" id="bar_label"></div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

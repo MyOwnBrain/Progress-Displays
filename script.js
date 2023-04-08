@@ -3,12 +3,21 @@
 const circle = document.getElementById("progress_circle");
 const bar_label = document.getElementById("bar_label");
 const percent_texts = document.querySelectorAll(".percent_text")
-let radius = circle.r.baseVal.value;
 
-let u = radius * 2 * Math.PI;
+let radius;
+let u;
 
-circle.style.strokeDasharray = u.toString();
-circle.style.strokeDashoffset = u.toString();
+window.addEventListener("load", () => {
+    radius = circle.r.baseVal.value;
+
+    u = radius * 2 * Math.PI;
+
+    circle.style.strokeDasharray = u.toString();
+    circle.style.strokeDashoffset = u.toString();
+
+    progress(Math.random() * 100)
+    console.log("fuck");
+})
 
 function progress(percent) {
     if (percent > 100 || percent < 0 ||  typeof percent !== "number") {
@@ -31,4 +40,3 @@ function progress(percent) {
     }, speed)
 }
 
-progress(Math.random() * 100)

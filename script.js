@@ -16,7 +16,6 @@ window.addEventListener("load", () => {
     circle.style.strokeDashoffset = u.toString();
 
     progress(Math.random() * 100)
-    console.log("fuck");
 })
 
 function progress(percent) {
